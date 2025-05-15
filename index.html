@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Verification</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    input {
+      padding: 10px;
+      width: 100%;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      padding: 10px 20px;
+      background: #007bff;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .error {
+      color: red;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Enter Details</h2>
+    <div class="error" id="errorMsg"></div>
+    <input type="text" id="enrollment" placeholder="Enrollment Number" />
+    <input type="date" id="dob" placeholder="Date of Birth" />
+    <button onclick="verifyDetails()">Verify</button>
+  </div>
+
+  <script>
+    function verifyDetails() {
+      const enrollment = document.getElementById('enrollment').value.trim();
+      const dob = document.getElementById('dob').value.trim();
+      const errorMsg = document.getElementById('errorMsg');
+
+      // Set your correct enrollment and dob here
+      const correctEnrollment = "10123001944";
+      const correctDob = "2005-01-01"; // format: yyyy-mm-dd
+
+      if (enrollment === correctEnrollment && dob === correctDob) {
+        window.location.href = "https://booseopenschooling.github.io/verify-10123001944/";
+      } else {
+        errorMsg.textContent = "Incorrect details. Please try again.";
+      }
+    }
+  </script>
+</body>
+</html>
